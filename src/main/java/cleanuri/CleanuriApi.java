@@ -8,7 +8,10 @@ import java.io.File;
 public class CleanuriApi {
 
     final static String CLEANURI_ULI = "/api/v1/shorten";
-    File json = new File("src/main/resources/data.json");
+    public CleanuriApi (File file){
+        this.json = file;
+    }
+    File json ;
 
     public Response sendUri(){
         return  given()
