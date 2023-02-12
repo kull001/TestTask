@@ -1,8 +1,9 @@
 package cleanuri;
 
 import io.restassured.RestAssured;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import static org.hamcrest.Matchers.equalTo;
 import java.io.File;
 import static org.apache.http.HttpStatus.SC_OK;
@@ -13,7 +14,7 @@ public class CleanuriApiTest {
     File forbiddensSymbolUrl = new File("src/main/resources/data2.json");
     File emptyUrl = new File("src/main/resources/data3.json");
 
-    @Before
+    @BeforeEach
     public void setUp() {
         RestAssured.baseURI = "https://cleanuri.com";
 

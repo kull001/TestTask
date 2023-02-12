@@ -1,15 +1,15 @@
 package randomuser;
 
 import io.restassured.RestAssured;
-import org.junit.Before;
-import org.junit.Test;
 import org.hamcrest.MatcherAssert;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
 public class RandomuserApiTest {
-    @Before
+    @BeforeEach
     public void setUp() {
         RestAssured.baseURI = "https://randomuser.me";
         RandomuserApi randomuserApi = new RandomuserApi();
