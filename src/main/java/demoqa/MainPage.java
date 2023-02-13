@@ -3,6 +3,10 @@ package demoqa;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import java.io.File;
 
 public class MainPage {
     private WebDriver driver;
@@ -19,10 +23,11 @@ public class MainPage {
     private By dateOfBirthMonth = By.xpath(".//select[@class=\"react-datepicker__month-select\"]/option[@value=\"6\"]");
     private By dateOfBirthDay = By.xpath(".//div[@aria-label=\"Choose Wednesday, July 11th, 1990\"]");
     private By subjects = By.xpath(".//input[@id=\"subjectsInput\"]");
-    private By hobbies = By.xpath("//*[@id=\"hobbiesWrapper\"]/div[2]/div[2]/label");
+    private By hobbies = By.id("hobbies-checkbox-2");
     private By picture = By.xpath(".//input[@type='file']");
     private By address = By.xpath(".//textarea[@id='currentAddress']");
     private By state = By.xpath(".//input[@id='react-select-3-input']");
+    private By state1 = By.xpath(".//div[text()=\"Select State\"]");//.//div[text()="Select State"]
     private By sity = By.xpath(".//input[@id='react-select-4-input']");
     private By submit = By.xpath(".//button[@id='submit']");
 
@@ -56,8 +61,26 @@ public class MainPage {
         driver.findElement(subjects).sendKeys(text);
     }
     public void enterHobbies(){
-        driver.findElement(subjects).sendKeys(Keys.PAGE_DOWN);
-        //driver.findElement(hobbies).click();
+        WebElement element = driver.findElement(hobbies);
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element);
+        actions.click();
+        actions.build().perform();
     }
+
+    public void enterPicture(){
+        String path = "src/main/resources/pic.jpg";
+        File file = new File(new File(path).getAbsolutePath());
+        driver.findElement(picture).sendKeys(file.getAbsolutePath());
+    }
+    public void enterAddress(String text){
+        driver.findElement(address).sendKeys(text);
+    }
+
+    public void enterState(){
+        driver.findElement(state1).click();
+        driver.findElement(state).click();
+    }
+
 
 }

@@ -27,5 +27,8 @@ public class MainPageTest {
         mainPage.enterDate();
         mainPage.enterSubjects("Subject");
         mainPage.enterHobbies();
+        mainPage.enterPicture();
+        mainPage.enterAddress("Saratov");
+        //mainPage.enterState();
     }
 }
