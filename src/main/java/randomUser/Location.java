@@ -1,4 +1,4 @@
-package randomuser;
+package randomUser;
 
 public class Location {
     private Street street;
@@ -6,7 +6,7 @@ public class Location {
     private String state;
     private String country;
     private int postcode;
-    private Coordinates coordinates;
+    private randomUser.Coordinates coordinates;
     private Timezone timezone;
 
     public Street getStreet() {
@@ -49,11 +49,11 @@ public class Location {
         this.postcode = postcode;
     }
 
-    public Coordinates getCoordinates() {
+    public randomUser.Coordinates getCoordinates() {
         return coordinates;
     }
 
-    public void setCoordinates(Coordinates coordinates) {
+    public void setCoordinates(randomUser.Coordinates coordinates) {
         this.coordinates = coordinates;
     }
 

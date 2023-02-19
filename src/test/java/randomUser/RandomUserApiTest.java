@@ -1,4 +1,4 @@
-package randomuser;
+package randomUser;
 
 import io.restassured.RestAssured;
 import org.hamcrest.MatcherAssert;
@@ -8,37 +8,37 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
-public class RandomuserApiTest {
+public class RandomUserApiTest {
     @BeforeEach
     public void setUp() {
         RestAssured.baseURI = "https://randomuser.me";
-        RandomuserApi randomuserApi = new RandomuserApi();
+        RandomUserApi randomuserApi = new RandomUserApi();
     }
 
     @Test
     public void generateUserWithoutParamTest(){
-        RandomuserApi randomuserApi = new RandomuserApi();
+        RandomUserApi randomuserApi = new RandomUserApi();
         User user = randomuserApi.sendUri("")
                 .body().as(User.class);
         MatcherAssert.assertThat(user.getResults().get(0).getNat(), notNullValue());
     }
     @Test
     public void generateUserGenderFemailTest(){
-            RandomuserApi randomuserApi = new RandomuserApi();
+            RandomUserApi randomuserApi = new RandomUserApi();
             User user = randomuserApi.sendUri("?gender=female")
                     .body().as(User.class);
         MatcherAssert.assertThat(user.getResults().get(0).getGender(), equalTo("female"));
     }
     @Test
     public void generateUserNatDKTest(){
-        RandomuserApi randomuserApi = new RandomuserApi();
+        RandomUserApi randomuserApi = new RandomUserApi();
         User user = randomuserApi.sendUri("?nat=DK")
                 .body().as(User.class);
         MatcherAssert.assertThat(user.getResults().get(0).getNat(), equalTo("DK"));
     }
     @Test
     public void generateTwoUserTest(){
-        RandomuserApi randomuserApi = new RandomuserApi();
+        RandomUserApi randomuserApi = new RandomUserApi();
         User user = randomuserApi.sendUri("?nat=DK&results=2")
                 .body().as(User.class);
         MatcherAssert.assertThat(user.getResults().get(0).getNat(), equalTo("DK"));
@@ -46,7 +46,7 @@ public class RandomuserApiTest {
     }
     @Test
     public void generateNotAllParamTest(){
-        RandomuserApi randomuserApi = new RandomuserApi();
+        RandomUserApi randomuserApi = new RandomUserApi();
         User user = randomuserApi.sendUri("?inc=gender,name")
                 .body().as(User.class);
         MatcherAssert.assertThat(user.getResults().get(0).getNat(), equalTo(null));

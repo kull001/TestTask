@@ -1,7 +1,8 @@
-package randomuser;
+package randomUser;
 
 public class Coordinates {
     private String latitude;
+
     private String longitude;
 
     public void setLatitude(String latitude) {

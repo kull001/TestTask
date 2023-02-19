@@ -1,4 +1,4 @@
-package randomuser;
+package randomUser;
 
 import java.util.List;
 

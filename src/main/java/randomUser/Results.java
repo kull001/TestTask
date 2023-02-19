@@ -1,4 +1,4 @@
-package randomuser;
+package randomUser;
 
 public class Results {
     private String gender;

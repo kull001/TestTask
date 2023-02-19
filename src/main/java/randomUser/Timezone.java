@@ -1,4 +1,4 @@
-package randomuser;
+package randomUser;
 
 public class Timezone {
     private String offset;

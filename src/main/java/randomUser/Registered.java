@@ -1,6 +1,6 @@
-package randomuser;
+package randomUser;
 
-public class Dob {
+public class Registered {
     private String date;
     private int age;
 
@@ -20,6 +20,6 @@ public class Dob {
         this.age = age;
     }
 
-    public Dob() {
+    public Registered() {
     }
 }

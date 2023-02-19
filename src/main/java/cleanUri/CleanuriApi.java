@@ -1,4 +1,4 @@
-package cleanuri;
+package cleanUri;
 
 import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;
@@ -8,7 +8,7 @@ import java.io.File;
 public class CleanuriApi {
 
     final static String CLEANURI_ULI = "/api/v1/shorten";
-    public CleanuriApi (File file){
+    public CleanuriApi(File file){
         this.json = file;
     }
     File json ;

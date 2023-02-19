@@ -1,10 +1,9 @@
-package demoqa;
+package demoQa;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class MainPageTest {
     private WebDriver driver;
@@ -17,7 +16,7 @@ public class MainPageTest {
     }
 
     @Test
-    public void ValidData(){
+    public void validData(){
         MainPage mainPage = new MainPage(driver);
         mainPage.enterName("Test");
         mainPage.enterLastName("Tests");

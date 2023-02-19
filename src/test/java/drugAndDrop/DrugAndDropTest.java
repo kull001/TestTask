@@ -1,11 +1,9 @@
 package drugAndDrop;
 
-import demoqa.MainPage;
 import drugAndDror.MainPageDND;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DrugAndDropTest {
@@ -19,7 +17,7 @@ public class DrugAndDropTest {
     }
 
     @Test
-    public void DNDElementTest(){
+    public void dndElementTest(){
         MainPageDND mainPageDND = new MainPageDND(driver);
         mainPageDND.enterName();
     }
