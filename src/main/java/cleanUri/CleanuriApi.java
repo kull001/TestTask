@@ -1,9 +1,13 @@
 package cleanUri;
 
 import io.restassured.response.Response;
+import lombok.Data;
+
 import static io.restassured.RestAssured.given;
 
 import java.io.File;
+
+
 
 public class CleanuriApi {
 

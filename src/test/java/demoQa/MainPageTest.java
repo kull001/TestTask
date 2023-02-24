@@ -18,16 +18,17 @@ public class MainPageTest {
     @Test
     public void validData(){
         MainPage mainPage = new MainPage(driver);
-        mainPage.enterName("Test");
-        mainPage.enterLastName("Tests");
-        mainPage.enterEmail("test@mail.ru");
-        mainPage.enterGender();
-        mainPage.enterPhone("+79178888888");
-        mainPage.enterDate();
-        mainPage.enterSubjects("Subject");
-        mainPage.enterHobbies();
-        mainPage.enterPicture();
-        mainPage.enterAddress("Saratov");
+
+        mainPage.enterName("Test")
+                .enterLastName("Tests")
+                .enterEmail("test@mail.ru")
+                .enterGender()
+                .enterPhone("+79178888888")
+                .enterDate()
+                .enterSubjects("Subject")
+                .enterHobbies()
+                .enterPicture()
+                .enterAddress("Saratov");
         //mainPage.enterState();
     }
 }

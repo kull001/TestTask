@@ -33,52 +33,63 @@ public class MainPage {
     public MainPage(WebDriver driver){
         this.driver = driver;
     }
-    public void enterName(String name){
+    public MainPage enterName(String name){
         driver.findElement(firstName).sendKeys(name);
+        return this;
     }
-    public void enterLastName(String name){
+    public MainPage enterLastName(String name){
         driver.findElement(lasttName).sendKeys(name);
+        return this;
     }
-    public void enterEmail(String text){
+    public MainPage enterEmail(String text){
         driver.findElement(email).sendKeys(text);
+        return this;
     }
-    public void enterGender(){
+    public MainPage enterGender(){
         driver.findElement(gender).click();
+        return this;
     }
-    public void enterPhone(String text){
+    public MainPage enterPhone(String text){
         driver.findElement(mobile).sendKeys(text);
+        return this;
     }
-    public void enterDate(){
+    public MainPage enterDate(){
         driver.findElement(dateOfBirth).click();
         driver.findElement(dateOfBirthYearSelect).click();
         driver.findElement(dateOfBirthYear).click();
         driver.findElement(dateOfBirthMonthSelect).click();
         driver.findElement(dateOfBirthMonth).click();
         driver.findElement(dateOfBirthDay).click();
+        return this;
     }
-    public void enterSubjects(String text){
+    public MainPage enterSubjects(String text){
         driver.findElement(subjects).sendKeys(text);
+        return this;
     }
-    public void enterHobbies(){
+    public MainPage enterHobbies(){
         WebElement element = driver.findElement(hobbies);
         Actions actions = new Actions(driver);
         actions.moveToElement(element);
         actions.click();
         actions.build().perform();
+        return this;
     }
 
-    public void enterPicture(){
+    public MainPage enterPicture(){
         String path = "src/main/resources/pic.jpg";
         File file = new File(new File(path).getAbsolutePath());
         driver.findElement(picture).sendKeys(file.getAbsolutePath());
+        return this;
     }
-    public void enterAddress(String text){
+    public MainPage enterAddress(String text){
         driver.findElement(address).sendKeys(text);
+        return this;
     }
 
-    public void enterState(){
+    public MainPage enterState(){
         driver.findElement(state1).click();
         driver.findElement(state).click();
+        return this;
     }
 
 
